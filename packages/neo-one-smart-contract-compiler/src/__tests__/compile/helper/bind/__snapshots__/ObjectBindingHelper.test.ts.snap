@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ObjectBindingHelper variable builtin instance value method property 1`] = `
+"snippetCode.ts (3,17): Builtin properties cannot be referenced
+
+      1 | 
+      2 |         import { ArrayStorage } from '@neo-one/smart-contract';
+    > 3 |         const { forEach } = ArrayStorage.for<number>();
+        |                 ^
+      4 | 
+      5 |         assertEqual(forEach !== undefined, true);
+      6 |       
+"
+`;
+
+exports[`ObjectBindingHelper variable builtin value computed property 1`] = `
+"snippetCode.ts (3,17): Unsupported syntax.
+
+      1 | 
+      2 |         import { Blockchain } from '@neo-one/smart-contract';
+    > 3 |         const { ['currentTransaction']: currentTransaction } = Blockchain;
+        |                 ^
+      4 | 
+      5 |         assertEqual(currentTransaction !== undefined, true);
+      6 |       
+"
+`;
+
+exports[`ObjectBindingHelper variable builtin value instance computed property 1`] = `
+"snippetCode.ts (3,17): Unsupported syntax.
+
+      1 | 
+      2 |         import { Blockchain } from '@neo-one/smart-contract';
+    > 3 |         const { ['signers']: signers } = Blockchain.currentTransaction;
+        |                 ^
+      4 | 
+      5 |         assertEqual(signers !== undefined, true);
+      6 |       
+"
+`;
+
+exports[`ObjectBindingHelper variable builtin value method property 1`] = `
+"snippetCode.ts (3,17): Builtin properties cannot be referenced
+
+      1 | 
+      2 |         import { Address } from '@neo-one/smart-contract';
+    > 3 |         const { isSender } = Address;
+        |                 ^
+      4 | 
+      5 |         assertEqual(isSender !== undefined, true);
+      6 |       
+"
+`;
+
+exports[`ObjectBindingHelper variable builtin value rest property 1`] = `
+"snippetCode.ts (3,37): Unsupported syntax. This is not supported because it would result in inefficient smart contract code
+
+      1 | 
+      2 |         import { Blockchain } from '@neo-one/smart-contract';
+    > 3 |         const { currentTransaction, ...rest } = Blockchain;
+        |                                     ^
+      4 | 
+      5 |         assertEqual(currentTransaction !== undefined, true);
+      6 |       
+"
+`;
+
+exports[`ObjectBindingHelper variable builtin value unknown property 1`] = `
+"snippetCode.ts (3,17): Property '0' does not exist on type 'BlockchainConstructor'.
+
+      1 | 
+      2 |         import { Blockchain } from '@neo-one/smart-contract';
+    > 3 |         const { 0: something } = Blockchain;
+        |                 ^
+      4 | 
+      5 |         assertEqual(something !== undefined, true);
+      6 |       
+"
+`;

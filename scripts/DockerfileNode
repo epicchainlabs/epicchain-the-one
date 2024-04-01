@@ -1,0 +1,147 @@
+# neotracker/neo-one-circleci-node:12.9.0-1 2019-08-27
+FROM neotracker/neo-one-circleci-node@sha256:6f76ab22882896c057d9d805955892f1dee26bb1a4257a6d095d07d617aa4d5c as builder
+RUN mkdir -p /tmp/neo-one
+WORKDIR /tmp/neo-one
+
+COPY rush.json LICENSE README.md ./
+COPY common/config common/config/
+COPY common/scripts common/scripts/
+COPY packages packages/
+
+RUN sudo node common/scripts/install-run-rush.js install
+RUN sudo node common/scripts/install-run-rush.js rebuild -t @neo-one/node-bin
+
+# node:12.9.0-buster-slim 2019-08-27
+FROM node@sha256:d1cfeb3cc51782d51336e34bd477c5b1b46b32e5f49cd1c3829ef52f0a5250df AS production
+
+RUN apt-get update \
+  && apt-get install -y --no-install-recommends \
+  libc6 \
+  libgcc1 \
+  libgssapi-krb5-2 \
+  libicu63 \
+  libssl1.1 \
+  libstdc++6 \
+  zlib1g \
+  libsnappy-dev \
+  && rm -rf /var/lib/apt/lists/*
+
+# Install .NET Core SDK
+RUN dotnet_sdk_version=5.0.302 \
+  && curl -SL --output dotnet.tar.gz https://dotnetcli.azureedge.net/dotnet/Sdk/$dotnet_sdk_version/dotnet-sdk-$dotnet_sdk_version-linux-x64.tar.gz \
+  && dotnet_sha512='0a0319ee8e9042bf04b6e83211c2d6e44e40e604bff0a133ba0d246d08bff76ebd88918ab5e10e6f7f0d2b504ddeb65c0108c6539bc4fbc4f09e4af3937e88ea' \
+  && echo "$dotnet_sha512 dotnet.tar.gz" | sha512sum -c - \
+  && mkdir -p /usr/share/dotnet \
+  && tar -ozxf dotnet.tar.gz -C /usr/share/dotnet \
+  && rm dotnet.tar.gz \
+  && ln -s /usr/share/dotnet/dotnet /usr/bin/dotnet \
+  && dotnet --version
+
+RUN mkdir -p /neo-one
+WORKDIR /neo-one
+COPY --from=builder /tmp/neo-one/packages/neo-one-utils/package.json packages/neo-one-utils/package.json
+COPY --from=builder /tmp/neo-one/packages/neo-one-utils/dist/cjs packages/neo-one-utils/dist/cjs/
+COPY --from=builder /tmp/neo-one/packages/neo-one-utils/node_modules packages/neo-one-utils/node_modules/
+COPY --from=builder /tmp/neo-one/packages/neo-one-client-common/package.json packages/neo-one-client-common/package.json
+COPY --from=builder /tmp/neo-one/packages/neo-one-client-common/dist/cjs packages/neo-one-client-common/dist/cjs/
+COPY --from=builder /tmp/neo-one/packages/neo-one-client-common/node_modules packages/neo-one-client-common/node_modules/
+COPY --from=builder /tmp/neo-one/packages/neo-one-client-full-common/package.json packages/neo-one-client-full-common/package.json
+COPY --from=builder /tmp/neo-one/packages/neo-one-client-full-common/dist/cjs packages/neo-one-client-full-common/dist/cjs/
+COPY --from=builder /tmp/neo-one/packages/neo-one-client-full-common/node_modules packages/neo-one-client-full-common/node_modules/
+COPY --from=builder /tmp/neo-one/packages/neo-one-node-core/package.json packages/neo-one-node-core/package.json
+COPY --from=builder /tmp/neo-one/packages/neo-one-node-core/dist/cjs packages/neo-one-node-core/dist/cjs/
+COPY --from=builder /tmp/neo-one/packages/neo-one-node-core/node_modules packages/neo-one-node-core/node_modules/
+COPY --from=builder /tmp/neo-one/packages/neo-one-node-vm/package.json packages/neo-one-node-vm/package.json
+COPY --from=builder /tmp/neo-one/packages/neo-one-node-vm/dist/cjs packages/neo-one-node-vm/dist/cjs/
+COPY --from=builder /tmp/neo-one/packages/neo-one-node-vm/node_modules packages/neo-one-node-vm/node_modules/
+COPY --from=builder /tmp/neo-one/packages/neo-one-node-vm/lib packages/neo-one-node-vm/lib/
+COPY --from=builder /tmp/neo-one/packages/neo-one-client-switch/package.json packages/neo-one-client-switch/package.json
+COPY --from=builder /tmp/neo-one/packages/neo-one-client-switch/dist/cjs packages/neo-one-client-switch/dist/cjs/
+COPY --from=builder /tmp/neo-one/packages/neo-one-client-switch/node_modules packages/neo-one-client-switch/node_modules/
+COPY --from=builder /tmp/neo-one/packages/neo-one-client-core/package.json packages/neo-one-client-core/package.json
+COPY --from=builder /tmp/neo-one/packages/neo-one-client-core/dist/cjs packages/neo-one-client-core/dist/cjs/
+COPY --from=builder /tmp/neo-one/packages/neo-one-client-core/node_modules packages/neo-one-client-core/node_modules/
+COPY --from=builder /tmp/neo-one/packages/neo-one-react-core/package.json packages/neo-one-react-core/package.json
+COPY --from=builder /tmp/neo-one/packages/neo-one-react-core/dist/cjs packages/neo-one-react-core/dist/cjs/
+COPY --from=builder /tmp/neo-one/packages/neo-one-react-core/node_modules packages/neo-one-react-core/node_modules/
+COPY --from=builder /tmp/neo-one/packages/neo-one-logger-config/package.json packages/neo-one-logger-config/package.json
+COPY --from=builder /tmp/neo-one/packages/neo-one-logger-config/dist/cjs packages/neo-one-logger-config/dist/cjs/
+COPY --from=builder /tmp/neo-one/packages/neo-one-logger-config/node_modules packages/neo-one-logger-config/node_modules/
+COPY --from=builder /tmp/neo-one/packages/neo-one-client-full-core/package.json packages/neo-one-client-full-core/package.json
+COPY --from=builder /tmp/neo-one/packages/neo-one-client-full-core/dist/cjs packages/neo-one-client-full-core/dist/cjs/
+COPY --from=builder /tmp/neo-one/packages/neo-one-client-full-core/node_modules packages/neo-one-client-full-core/node_modules/
+COPY --from=builder /tmp/neo-one/packages/neo-one-react/package.json packages/neo-one-react/package.json
+COPY --from=builder /tmp/neo-one/packages/neo-one-react/dist/cjs packages/neo-one-react/dist/cjs/
+COPY --from=builder /tmp/neo-one/packages/neo-one-react/node_modules packages/neo-one-react/node_modules/
+COPY --from=builder /tmp/neo-one/packages/neo-one-react-common/package.json packages/neo-one-react-common/package.json
+COPY --from=builder /tmp/neo-one/packages/neo-one-react-common/dist/cjs packages/neo-one-react-common/dist/cjs/
+COPY --from=builder /tmp/neo-one/packages/neo-one-react-common/node_modules packages/neo-one-react-common/node_modules/
+COPY --from=builder /tmp/neo-one/packages/neo-one-logger/package.json packages/neo-one-logger/package.json
+COPY --from=builder /tmp/neo-one/packages/neo-one-logger/dist/cjs packages/neo-one-logger/dist/cjs/
+COPY --from=builder /tmp/neo-one/packages/neo-one-logger/node_modules packages/neo-one-logger/node_modules/
+COPY --from=builder /tmp/neo-one/packages/neo-one-cli-common/package.json packages/neo-one-cli-common/package.json
+COPY --from=builder /tmp/neo-one/packages/neo-one-cli-common/dist/cjs packages/neo-one-cli-common/dist/cjs/
+COPY --from=builder /tmp/neo-one/packages/neo-one-cli-common/node_modules packages/neo-one-cli-common/node_modules/
+COPY --from=builder /tmp/neo-one/packages/neo-one-cli-common-node/package.json packages/neo-one-cli-common-node/package.json
+COPY --from=builder /tmp/neo-one/packages/neo-one-cli-common-node/dist/cjs packages/neo-one-cli-common-node/dist/cjs/
+COPY --from=builder /tmp/neo-one/packages/neo-one-cli-common-node/node_modules packages/neo-one-cli-common-node/node_modules/
+COPY --from=builder /tmp/neo-one/packages/neo-one-http/package.json packages/neo-one-http/package.json
+COPY --from=builder /tmp/neo-one/packages/neo-one-http/dist/cjs packages/neo-one-http/dist/cjs/
+COPY --from=builder /tmp/neo-one/packages/neo-one-http/node_modules packages/neo-one-http/node_modules/
+COPY --from=builder /tmp/neo-one/packages/neo-one-http-context/package.json packages/neo-one-http-context/package.json
+COPY --from=builder /tmp/neo-one/packages/neo-one-http-context/dist/cjs packages/neo-one-http-context/dist/cjs/
+COPY --from=builder /tmp/neo-one/packages/neo-one-http-context/node_modules packages/neo-one-http-context/node_modules/
+COPY --from=builder /tmp/neo-one/packages/neo-one-node-rpc-handler/package.json packages/neo-one-node-rpc-handler/package.json
+COPY --from=builder /tmp/neo-one/packages/neo-one-node-rpc-handler/dist/cjs packages/neo-one-node-rpc-handler/dist/cjs/
+COPY --from=builder /tmp/neo-one/packages/neo-one-node-rpc-handler/node_modules packages/neo-one-node-rpc-handler/node_modules/
+COPY --from=builder /tmp/neo-one/packages/neo-one-node-consensus/package.json packages/neo-one-node-consensus/package.json
+COPY --from=builder /tmp/neo-one/packages/neo-one-node-consensus/dist/cjs packages/neo-one-node-consensus/dist/cjs/
+COPY --from=builder /tmp/neo-one/packages/neo-one-node-consensus/node_modules packages/neo-one-node-consensus/node_modules/
+COPY --from=builder /tmp/neo-one/packages/neo-one-node-storage-common/package.json packages/neo-one-node-storage-common/package.json
+COPY --from=builder /tmp/neo-one/packages/neo-one-node-storage-common/dist/cjs packages/neo-one-node-storage-common/dist/cjs/
+COPY --from=builder /tmp/neo-one/packages/neo-one-node-storage-common/node_modules packages/neo-one-node-storage-common/node_modules/
+COPY --from=builder /tmp/neo-one/packages/neo-one-node-blockchain/package.json packages/neo-one-node-blockchain/package.json
+COPY --from=builder /tmp/neo-one/packages/neo-one-node-blockchain/dist/cjs packages/neo-one-node-blockchain/dist/cjs/
+COPY --from=builder /tmp/neo-one/packages/neo-one-node-blockchain/node_modules packages/neo-one-node-blockchain/node_modules/
+COPY --from=builder /tmp/neo-one/packages/neo-one-node-http-rpc/package.json packages/neo-one-node-http-rpc/package.json
+COPY --from=builder /tmp/neo-one/packages/neo-one-node-http-rpc/dist/cjs packages/neo-one-node-http-rpc/dist/cjs/
+COPY --from=builder /tmp/neo-one/packages/neo-one-node-http-rpc/node_modules packages/neo-one-node-http-rpc/node_modules/
+COPY --from=builder /tmp/neo-one/packages/neo-one-node-network/package.json packages/neo-one-node-network/package.json
+COPY --from=builder /tmp/neo-one/packages/neo-one-node-network/dist/cjs packages/neo-one-node-network/dist/cjs/
+COPY --from=builder /tmp/neo-one/packages/neo-one-node-network/node_modules packages/neo-one-node-network/node_modules/
+COPY --from=builder /tmp/neo-one/packages/neo-one-node-offline/package.json packages/neo-one-node-offline/package.json
+COPY --from=builder /tmp/neo-one/packages/neo-one-node-offline/dist/cjs packages/neo-one-node-offline/dist/cjs/
+COPY --from=builder /tmp/neo-one/packages/neo-one-node-offline/node_modules packages/neo-one-node-offline/node_modules/
+COPY --from=builder /tmp/neo-one/packages/neo-one-node-protocol/package.json packages/neo-one-node-protocol/package.json
+COPY --from=builder /tmp/neo-one/packages/neo-one-node-protocol/dist/cjs packages/neo-one-node-protocol/dist/cjs/
+COPY --from=builder /tmp/neo-one/packages/neo-one-node-protocol/node_modules packages/neo-one-node-protocol/node_modules/
+COPY --from=builder /tmp/neo-one/packages/neo-one-node-storage-levelup/package.json packages/neo-one-node-storage-levelup/package.json
+COPY --from=builder /tmp/neo-one/packages/neo-one-node-storage-levelup/dist/cjs packages/neo-one-node-storage-levelup/dist/cjs/
+COPY --from=builder /tmp/neo-one/packages/neo-one-node-storage-levelup/node_modules packages/neo-one-node-storage-levelup/node_modules/
+COPY --from=builder /tmp/neo-one/packages/neo-one-node/package.json packages/neo-one-node/package.json
+COPY --from=builder /tmp/neo-one/packages/neo-one-node/dist/cjs packages/neo-one-node/dist/cjs/
+COPY --from=builder /tmp/neo-one/packages/neo-one-node/node_modules packages/neo-one-node/node_modules/
+COPY --from=builder /tmp/neo-one/packages/neo-one-node-neo-settings/package.json packages/neo-one-node-neo-settings/package.json
+COPY --from=builder /tmp/neo-one/packages/neo-one-node-neo-settings/dist/cjs packages/neo-one-node-neo-settings/dist/cjs/
+COPY --from=builder /tmp/neo-one/packages/neo-one-node-neo-settings/node_modules packages/neo-one-node-neo-settings/node_modules/
+COPY --from=builder /tmp/neo-one/packages/neo-one-utils-node/package.json packages/neo-one-utils-node/package.json
+COPY --from=builder /tmp/neo-one/packages/neo-one-utils-node/dist/cjs packages/neo-one-utils-node/dist/cjs/
+COPY --from=builder /tmp/neo-one/packages/neo-one-utils-node/node_modules packages/neo-one-utils-node/node_modules/
+COPY --from=builder /tmp/neo-one/packages/neo-one-node-bin/package.json packages/neo-one-node-bin/package.json
+COPY --from=builder /tmp/neo-one/packages/neo-one-node-bin/dist/cjs packages/neo-one-node-bin/dist/cjs/
+COPY --from=builder /tmp/neo-one/packages/neo-one-node-bin/node_modules packages/neo-one-node-bin/node_modules/
+COPY --from=builder /tmp/neo-one/packages/neo-one-node-bin/bin packages/neo-one-node-bin/bin/
+COPY --from=builder /tmp/neo-one/packages/neo-one-node-tools/package.json packages/neo-one-node-tools/package.json
+COPY --from=builder /tmp/neo-one/packages/neo-one-node-tools/dist/cjs packages/neo-one-node-tools/dist/cjs/
+COPY --from=builder /tmp/neo-one/packages/neo-one-node-tools/node_modules packages/neo-one-node-tools/node_modules/
+COPY --from=builder /tmp/neo-one/packages/neo-one-node-tools/bin packages/neo-one-node-tools/bin/
+COPY --from=builder /tmp/neo-one/packages/neo-one-node-native/package.json packages/neo-one-node-native/package.json
+COPY --from=builder /tmp/neo-one/packages/neo-one-node-native/dist/cjs packages/neo-one-node-native/dist/cjs/
+COPY --from=builder /tmp/neo-one/packages/neo-one-node-native/node_modules packages/neo-one-node-native/node_modules/
+COPY --from=builder /tmp/neo-one/common/temp/node_modules common/temp/node_modules/
+
+ENV EDGE_APP_ROOT /neo-one/packages/neo-one-node-vm/lib/bin/Debug/net5.0
+ENV EDGE_USE_CORELR 1
+RUN dotnet build packages/neo-one-node-vm/lib
+
+ENTRYPOINT ["/usr/local/bin/node", "packages/neo-one-node-bin/bin/neo-one-node.js"]

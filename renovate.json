@@ -1,0 +1,12 @@
+{
+  "extends": ["config:base", ":semanticCommits", ":preserveSemverRanges", "group:all"],
+  "timezone": "America/Los_Angeles",
+  "updateNotScheduled": false,
+  "automerge": true,
+  "major": {
+    "automerge": false
+  },
+  "automergeType": "pr-comment",
+  "automergeComment": "bors r+",
+  "requiredStatusChecks": null
+}

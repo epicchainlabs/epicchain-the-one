@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Hash256 cannot be called 1`] = `
+"snippetCode.ts (4,7): Value is not callable.
+
+      2 |       import { Hash256 } from '@neo-one/smart-contract';
+      3 | 
+    > 4 |       Hash256();
+        |       ^
+      5 |     
+"
+`;
+
+exports[`Hash256 cannot be implemented 1`] = `
+"snippetCode.ts (3,13): Class 'MyHash256' incorrectly implements interface 'Hash256'.
+  Type 'MyHash256' is missing the following properties from type 'Hash256': [OpaqueTagSymbol0], length, equals, toString, and 3 more.
+
+      1 | 
+      2 |       import { Hash256 } from '@neo-one/smart-contract';
+    > 3 |       class MyHash256 implements Hash256 {
+        |             ^
+      4 |       }
+      5 |     
+"
+`;

@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`genTest Token 1`] = `
+Object {
+  "js": "
+import { createWithContracts } from '@neo-one/smart-contract-test';
+import * as path from 'path';
+
+export const withContracts = createWithContracts([
+  { name: 'Token', filePath: path.resolve(__dirname, '../contracts/Token.ts') }, { name: 'ICO', filePath: path.resolve(__dirname, '../contracts/ICO.ts') }
+]);
+",
+  "ts": "
+import { createWithContracts, TestOptions, WithContractsOptions } from '@neo-one/smart-contract-test';
+import { Contracts } from './contracts';
+import * as path from 'path';
+
+export const withContracts: (
+  test: (contracts: Contracts & TestOptions) => Promise<void>,
+  options?: WithContractsOptions,
+) => Promise<void> = createWithContracts([
+  { name: 'Token', filePath: path.resolve(__dirname, '../contracts/Token.ts') }, { name: 'ICO', filePath: path.resolve(__dirname, '../contracts/ICO.ts') }
+]);
+",
+}
+`;

@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TemplateStringsArray cannot be implemented 1`] = `
+"snippetCode.ts (2,13): Class 'MyTemplateStringsArray' incorrectly implements interface 'TemplateStringsArray'.
+  Type 'MyTemplateStringsArray' is missing the following properties from type 'TemplateStringsArray': [Symbol.iterator], length, entries, toString, and 13 more.
+
+      1 | 
+    > 2 |       class MyTemplateStringsArray implements TemplateStringsArray {
+        |             ^
+      3 |       }
+      4 |     
+"
+`;

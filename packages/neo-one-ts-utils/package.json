@@ -1,0 +1,26 @@
+{
+  "name": "@neo-one/ts-utils",
+  "version": "2.7.0",
+  "description": "NEO•ONE TypeScript utils.",
+  "main": "./dist/cjs/index",
+  "module": "./dist/esm/index",
+  "scripts": {
+    "build": "gulp",
+    "lint": "node ./node_modules/@neo-one/build-tools/bin/neo-one-lint.js",
+    "lint:staged": "lint-staged --relative",
+    "pack": "gulp pack",
+    "tsc": "node ./node_modules/@neo-one/build-tools/bin/neo-one-tsc.js"
+  },
+  "sideEffects": false,
+  "dependencies": {
+    "lodash": "^4.17.15",
+    "source-map": "^0.7.3",
+    "tslib": "^1.10.0",
+    "typescript": "3.9.5"
+  },
+  "devDependencies": {
+    "@neo-one/build-tools": "^1.0.0",
+    "@types/lodash": "^4.14.138",
+    "gulp": "~4.0.2"
+  }
+}

@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Buffer cannot be extended 1`] = `
+"snippetCode.ts (2,30): Type 'BufferConstructor' is not a constructor function type.
+
+      1 | 
+    > 2 |       class MyBuffer extends Buffer {
+        |                              ^
+      3 |       }
+      4 |     
+"
+`;
+
+exports[`Buffer cannot be implemented 1`] = `
+"snippetCode.ts (2,13): Class 'MyBuffer' incorrectly implements interface 'Buffer'.
+  Type 'MyBuffer' is missing the following properties from type 'Buffer': length, equals, toString, toInteger, and 2 more.
+
+      1 | 
+    > 2 |       class MyBuffer implements Buffer {
+        |             ^
+      3 |       }
+      4 |     
+"
+`;

@@ -1,0 +1,89 @@
+# Environment Configuration
+.env
+
+# Build output folders
+/dist/
+/build/
+/tmp
+/packages/*/dist
+/packages/*/lib/bin
+/packages/*/lib/obj
+.rpt2_cache
+/reports
+.nyc_output
+.awcache
+.cache-loader
+
+# Release Files
+/packages/*/LICENSE
+/packages/*/README.md
+
+# Playground
+/packages/neo-one-playground
+
+# Website
+/packages/neo-one-website/tmp
+/packages/neo-one-website/build
+/packages/neo-one-website/dist
+/packages/neo-one-website/publicOut
+/packages/neo-one-website/.awcache
+/packages/neo-one-website/.cache-loader
+
+# Logs
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# Coverage directory used by tools like istanbul
+coverage
+
+# node-waf configuration
+.lock-wscript
+
+# Dependency directory
+# https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git-
+node_modules
+*/node_modules
+
+# Debug log from npm
+npm-debug.log
+
+# Debug log from lerna
+lerna-debug.log
+
+# IntelliJ IDE ignore
+.idea
+
+# Visual Studio Code
+.history
+
+# flow-typed Lib Defs
+flow-typed/
+
+# Flow Coverage Report
+flow-coverage/
+
+# Happypack
+.happypack
+
+# OSX Files
+.DS_Store
+
+# Template lock files
+/packages/*/template/yarn.lock
+
+# Cypress
+cypress/videos
+cypress/screenshots
+
+# React-Static Artifacts
+/packages/neo-one-website/artifacts/
+
+# Rush files
+common/temp/**
+package-deps.json
+/packages/*/.rush

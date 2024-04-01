@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`genBrowserClient Token 1`] = `
+Object {
+  "js": "
+import {
+  addLocalKeysSync,
+  Client,
+  DeveloperClient,
+  LocalKeyStore,
+  LocalMemoryStore,
+  LocalUserAccountProvider,
+  NEOONEProvider,
+  NEOONEDataProvider,
+} from '@neo-one/client';
+import { getJSONRPCLocalProviderManager } from '@neo-one/local-singleton';
+
+const getDefaultUserAccountProviders = (provider) => ({
+    memory: new LocalUserAccountProvider({
+      keystore: new LocalKeyStore(new LocalMemoryStore()),
+      provider,
+    }),
+  });
+
+const isLocalUserAccountProvider = (userAccountProvider) =>
+  userAccountProvider instanceof LocalUserAccountProvider;
+
+export const createClient = (getUserAccountProviders = getDefaultUserAccountProviders) => {
+    const providers = [
+  { network: 'priv', rpcURL: 'http://localhost:4500/rpc' },
+];
+if (process.env.NODE_ENV !== 'production' || process.env.NEO_ONE_DEV === 'true') {
+  providers.push({ network: 'local', rpcURL: getJSONRPCLocalProviderManager() });
+}
+const provider = new NEOONEProvider(providers);
+const userAccountProviders = getUserAccountProviders(provider);
+const localUserAccountProviders = Object.values(userAccountProviders).filter(isLocalUserAccountProvider);
+const localUserAccountProvider = localUserAccountProviders.find(
+  (userAccountProvider) => userAccountProvider.keystore instanceof LocalKeyStore,
+);
+if (process.env.NODE_ENV !== 'production' || process.env.NEO_ONE_DEV === 'true') {
+  if (localUserAccountProvider !== undefined) {
+    const localKeyStore = localUserAccountProvider.keystore;
+    if (localKeyStore instanceof LocalKeyStore) {
+      addLocalKeysSync([
+        { network: 'local', name: 'master', privateKey: 'L4qhHtwbiAMu1nrSmsTP5a3dJbxA3SNS6oheKnKd8E7KTJyCLcUv' },
+      ], localKeyStore);
+    }
+  }
+}
+
+  return new Client(userAccountProviders);
+};
+
+export const createDeveloperClients = () => ({
+  'priv': new DeveloperClient(new NEOONEDataProvider({ network: 'priv', rpcURL: 'http://localhost:4500/rpc' })),
+'local': new DeveloperClient(new NEOONEDataProvider({ network: 'local', rpcURL: getJSONRPCLocalProviderManager() })),
+});
+  ",
+  "ts": "
+import {
+  addLocalKeysSync,
+  Client,
+  DeveloperClient,
+  DeveloperClients,
+  LocalKeyStore,
+  LocalMemoryStore,
+  LocalUserAccountProvider,
+  NEOONEProvider,
+  NEOONEDataProvider,
+  UserAccountProviders,
+} from '@neo-one/client';
+import { getJSONRPCLocalProviderManager } from '@neo-one/local-singleton';
+
+export interface DefaultUserAccountProviders {
+  readonly memory: LocalUserAccountProvider<LocalKeyStore, NEOONEProvider>,
+}
+
+const getDefaultUserAccountProviders = (provider: NEOONEProvider) => ({
+    memory: new LocalUserAccountProvider({
+      keystore: new LocalKeyStore(new LocalMemoryStore()),
+      provider,
+    }),
+  });
+
+const isLocalUserAccountProvider = (userAccountProvider: any): userAccountProvider is LocalUserAccountProvider =>
+  userAccountProvider instanceof LocalUserAccountProvider;
+
+export const createClient = <TUserAccountProviders extends UserAccountProviders<any> = DefaultUserAccountProviders>(
+  getUserAccountProviders: (provider: NEOONEProvider) => TUserAccountProviders = getDefaultUserAccountProviders,
+): Client<TUserAccountProviders extends UserAccountProviders<infer TUserAccountProvider> ? TUserAccountProvider : any, TUserAccountProviders> => {
+    const providers = [
+  { network: 'priv', rpcURL: 'http://localhost:4500/rpc' },
+];
+if (process.env.NODE_ENV !== 'production' || process.env.NEO_ONE_DEV === 'true') {
+  providers.push({ network: 'local', rpcURL: getJSONRPCLocalProviderManager() });
+}
+const provider = new NEOONEProvider(providers);
+const userAccountProviders = getUserAccountProviders(provider);
+const localUserAccountProviders = Object.values(userAccountProviders).filter(isLocalUserAccountProvider);
+const localUserAccountProvider = localUserAccountProviders.find(
+  (userAccountProvider) => userAccountProvider.keystore instanceof LocalKeyStore,
+);
+if (process.env.NODE_ENV !== 'production' || process.env.NEO_ONE_DEV === 'true') {
+  if (localUserAccountProvider !== undefined) {
+    const localKeyStore = localUserAccountProvider.keystore;
+    if (localKeyStore instanceof LocalKeyStore) {
+      addLocalKeysSync([
+        { network: 'local', name: 'master', privateKey: 'L4qhHtwbiAMu1nrSmsTP5a3dJbxA3SNS6oheKnKd8E7KTJyCLcUv' },
+      ], localKeyStore);
+    }
+  }
+}
+
+  return new Client(userAccountProviders as any);
+}
+
+export const createDeveloperClients = (): DeveloperClients => ({
+  'priv': new DeveloperClient(new NEOONEDataProvider({ network: 'priv', rpcURL: 'http://localhost:4500/rpc' })),
+'local': new DeveloperClient(new NEOONEDataProvider({ network: 'local', rpcURL: getJSONRPCLocalProviderManager() })),
+});
+",
+}
+`;

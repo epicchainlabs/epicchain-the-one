@@ -1,0 +1,39 @@
+{
+  "name": "@neo-one/local-browser",
+  "version": "2.3.1",
+  "description": "NEO•ONE local browser implementation.",
+  "main": "./src/index",
+  "scripts": {
+    "build": "",
+    "lint": "node ./node_modules/@neo-one/build-tools/bin/neo-one-lint.js",
+    "lint:staged": "lint-staged --relative",
+    "tsc": "node ./node_modules/@neo-one/build-tools/bin/neo-one-tsc.js"
+  },
+  "sideEffects": false,
+  "dependencies": {
+    "@neo-one/cli-common": "^3.11.2",
+    "@neo-one/client-common": "^3.11.2",
+    "@neo-one/client-core": "^3.11.2",
+    "@neo-one/node-browser": "^2.3.0",
+    "@neo-one/smart-contract-codegen": "^3.11.2",
+    "@neo-one/smart-contract-compiler": "^3.11.2",
+    "@neo-one/utils": "^3.2.1",
+    "@neo-one/worker": "^2.3.0",
+    "core-js": "^3.2.1",
+    "lodash": "^4.17.15",
+    "nanoid": "^2.0.3",
+    "pouchdb": "7.1.1",
+    "pouchdb-utils": "^7.1.1",
+    "rxjs": "^6.5.3",
+    "safe-stable-stringify": "^1.1.0",
+    "source-map": "^0.7.3",
+    "tslib": "^1.10.0",
+    "typescript": "3.9.5"
+  },
+  "devDependencies": {
+    "@neo-one/build-tools": "^1.0.0",
+    "@types/lodash": "^4.14.138",
+    "@types/nanoid": "^2.0.0",
+    "@types/pouchdb": "^6.4.0"
+  }
+}

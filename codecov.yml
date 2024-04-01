@@ -1,0 +1,19 @@
+codecov:
+  ci:
+    - '!appveyor'
+
+ignore:
+  - 'common'
+  - 'scripts'
+  - '**/__e2e__/**'
+  - '**/__data__/**'
+  - 'packages/neo-one-build-*/**'
+
+comment:
+  layout: 'reach, diff, flags, files'
+
+coverage:
+  status:
+    project:
+      default:
+        threshold: 0.30

@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PublicKey cannot be implemented 1`] = `
+"snippetCode.ts (3,13): Class 'MyPublicKey' incorrectly implements interface 'PublicKey'.
+  Type 'MyPublicKey' is missing the following properties from type 'PublicKey': [OpaqueTagSymbol0], length, equals, toString, and 3 more.
+
+      1 | 
+      2 |       import { PublicKey } from '@neo-one/smart-contract';
+    > 3 |       class MyPublicKey implements PublicKey {
+        |             ^
+      4 |       }
+      5 |     
+"
+`;

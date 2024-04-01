@@ -1,0 +1,28 @@
+{
+  "name": "@neo-one/node-network",
+  "version": "3.11.2",
+  "description": "NEO•ONE NEO network protocol.",
+  "main": "./dist/cjs/index",
+  "module": "./dist/esm/index",
+  "scripts": {
+    "build": "gulp",
+    "lint": "node ./node_modules/@neo-one/build-tools/bin/neo-one-lint.js",
+    "lint:staged": "lint-staged --relative",
+    "pack": "gulp pack",
+    "tsc": "node ./node_modules/@neo-one/build-tools/bin/neo-one-tsc.js"
+  },
+  "sideEffects": false,
+  "dependencies": {
+    "@neo-one/client-switch": "^3.11.2",
+    "@neo-one/logger": "^2.7.0",
+    "@neo-one/node-core": "^3.11.2",
+    "@neo-one/utils": "^3.2.1",
+    "lodash": "^4.17.15",
+    "tslib": "^1.10.0"
+  },
+  "devDependencies": {
+    "@neo-one/build-tools": "^1.0.0",
+    "@types/lodash": "^4.14.138",
+    "gulp": "~4.0.2"
+  }
+}

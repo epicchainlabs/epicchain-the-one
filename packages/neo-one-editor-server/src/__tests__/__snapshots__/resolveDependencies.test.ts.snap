@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`resolveDependencies resolve deps 1`] = `
+Object {
+  "dependencies": Object {},
+  "name": "styled-components",
+  "types": true,
+  "version": "3.4.10",
+}
+`;
+
+exports[`resolveDependencies resolve deps 2`] = `
+Object {
+  "dependencies": Object {},
+  "name": "rxjs",
+  "types": true,
+  "version": "6.3.3",
+}
+`;
+
+exports[`resolveDependencies resolve deps 3`] = `
+Object {
+  "dependencies": Object {},
+  "name": "react-dom",
+  "types": false,
+  "version": "16.5.1",
+}
+`;
+
+exports[`resolveDependencies resolve deps 4`] = `
+Object {
+  "dependencies": Object {},
+  "name": "react",
+  "types": false,
+  "version": "16.5.1",
+}
+`;
+
+exports[`resolveDependencies resolve deps 5`] = `
+Object {
+  "dependencies": Object {},
+  "name": "bignumber.js",
+  "types": true,
+  "version": "7.2.1",
+}
+`;

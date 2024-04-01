@@ -1,0 +1,21 @@
+{
+  "scope": "neo-one",
+  "name": "server",
+  "builds": [
+    { "src": "resolve.js", "use": "@vercel/node" },
+    { "src": "pkg.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/resolve", "dest": "/resolve.js", "headers":
+      {
+        "Access-Control-Allow-Origin": "*"
+      }
+    },
+    { "src": "/pkg", "dest": "/pkg.js", "headers":
+      {
+        "Access-Control-Allow-Origin": "*"
+      }
+    },
+    { "src": "/.*", "status": 404 }
+  ]
+}

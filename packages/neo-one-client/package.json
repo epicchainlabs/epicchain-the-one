@@ -1,0 +1,24 @@
+{
+  "name": "@neo-one/client",
+  "version": "3.11.2",
+  "description": "NEO•ONE client API.",
+  "main": "./dist/cjs/index",
+  "module": "./dist/esm/index",
+  "scripts": {
+    "build": "gulp",
+    "lint": "node ./node_modules/@neo-one/build-tools/bin/neo-one-lint.js",
+    "lint:staged": "lint-staged --relative",
+    "pack": "gulp pack",
+    "tsc": "node ./node_modules/@neo-one/build-tools/bin/neo-one-tsc.js"
+  },
+  "sideEffects": false,
+  "dependencies": {
+    "@neo-one/client-common": "^3.11.2",
+    "@neo-one/client-core": "^3.11.2",
+    "@neo-one/developer-tools": "^3.11.2"
+  },
+  "devDependencies": {
+    "@neo-one/build-tools": "^1.0.0",
+    "gulp": "~4.0.2"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "@neo-one/node-storage-levelup",
+  "version": "3.11.2",
+  "description": "NEO•ONE levelup node storage.",
+  "main": "./dist/cjs/index",
+  "module": "./dist/esm/index",
+  "scripts": {
+    "build": "gulp",
+    "lint": "node ./node_modules/@neo-one/build-tools/bin/neo-one-lint.js",
+    "lint:staged": "lint-staged --relative",
+    "pack": "gulp pack",
+    "tsc": "node ./node_modules/@neo-one/build-tools/bin/neo-one-tsc.js"
+  },
+  "sideEffects": false,
+  "dependencies": {
+    "@neo-one/client-common": "^3.11.2",
+    "@neo-one/node-core": "^3.11.2",
+    "@neo-one/node-storage-common": "^3.11.2",
+    "@neo-one/utils": "^3.2.1",
+    "@types/levelup": "^3.1.1",
+    "@types/abstract-leveldown": "^5.0.1",
+    "abstract-leveldown": "^6.0.3",
+    "levelup": "4.1.0",
+    "rocksdb": "^4.1.0",
+    "rxjs": "^6.5.3",
+    "tslib": "^1.10.0"
+  },
+  "devDependencies": {
+    "@neo-one/build-tools": "^1.0.0",
+    "@types/jest": "^24.0.18",
+    "@types/memdown": "^3.0.0",
+    "@types/rocksdb": "3.0.0",
+    "bn.js": "^5.0.0",
+    "gulp": "~4.0.2",
+    "memdown": "^5.0.0"
+  }
+}

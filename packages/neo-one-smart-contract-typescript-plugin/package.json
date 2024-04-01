@@ -1,0 +1,24 @@
+{
+  "name": "@neo-one/smart-contract-typescript-plugin",
+  "version": "3.11.2",
+  "description": "NEO•ONE TypeScript typescript plugin.",
+  "main": "./dist/cjs/index",
+  "module": "./dist/esm/index",
+  "scripts": {
+    "build": "gulp",
+    "lint": "node ./node_modules/@neo-one/build-tools/bin/neo-one-lint.js",
+    "lint:staged": "lint-staged --relative",
+    "pack": "gulp pack",
+    "tsc": "node ./node_modules/@neo-one/build-tools/bin/neo-one-tsc.js"
+  },
+  "sideEffects": false,
+  "dependencies": {
+    "@neo-one/smart-contract-compiler": "^3.11.2",
+    "@neo-one/smart-contract-compiler-node": "^3.11.2",
+    "typescript": "3.9.5"
+  },
+  "devDependencies": {
+    "@neo-one/build-tools": "^1.0.0",
+    "gulp": "~4.0.2"
+  }
+}

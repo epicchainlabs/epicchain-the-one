@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Array cannot be ambiguously referenced - arrow return value 1`] = `
+"snippetCode.ts (5,50): Assignment (number[] => Arr) is ambiguous in relation to the provided expression.
+
+      3 |         readonly length: number;
+      4 |       }
+    > 5 |       const foo = (value: Array<number>): Arr => value;
+        |                                                  ^
+      6 |       const x = [1, 2, 3]
+      7 | 
+      8 |       assertEqual(foo(x).length, 3);
+"
+`;
+
+exports[`Array cannot be ambiguously referenced - assignment 1`] = `
+"snippetCode.ts (6,11): Assignment (number[] => Arr | undefined) is ambiguous in relation to the provided expression.
+
+      4 |       }
+      5 |       let x: Arr | undefined;
+    > 6 |       x = [1, 2, 3]
+        |           ^
+      7 |     
+"
+`;
+
+exports[`Array cannot be ambiguously referenced - call 1`] = `
+"snippetCode.ts (8,11): Call parameter is ambiguous in relation to the provided argument.
+
+      6 |       const x = [1, 2, 3]
+      7 |       x.length;
+    > 8 |       foo(x);
+        |           ^
+      9 |     
+"
+`;
+
+exports[`Array cannot be ambiguously referenced - function return value 1`] = `
+"snippetCode.ts (6,16): Assignment (number[] => Arr) is ambiguous in relation to the provided expression.
+
+      4 |       }
+      5 |       const foo = function(value: Array<number>): Arr {
+    > 6 |         return value;
+        |                ^
+      7 |       }
+      8 |       const x = [1, 2, 3]
+      9 | 
+"
+`;
+
+exports[`Array cannot be ambiguously referenced - variable 1`] = `
+"snippetCode.ts (5,22): Assignment (number[] => Arr) is ambiguous in relation to the provided expression.
+
+      3 |         readonly length: number;
+      4 |       }
+    > 5 |       const x: Arr = [1, 2, 3]
+        |                      ^
+      6 |       x.length;
+      7 |     
+"
+`;
+
+exports[`Array cannot be extended 1`] = `
+"snippetCode.ts (2,29): Type 'ArrayConstructor' is not a constructor function type.
+
+      1 | 
+    > 2 |       class MyArray extends Array<number> {
+        |                             ^
+      3 |       }
+      4 |     
+"
+`;

@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Buffer.from cannot be element referenced 1`] = `
+"snippetCode.ts (2,27): Builtin properties cannot be referenced
+
+      1 | 
+    > 2 |       const keys = Buffer['from'];
+        |                           ^
+      3 |     
+"
+`;
+
+exports[`Buffer.from cannot be referenced 1`] = `
+"snippetCode.ts (2,27): Builtin properties cannot be referenced
+
+      1 | 
+    > 2 |       const keys = Buffer.from;
+        |                           ^
+      3 |     
+"
+`;
+
+exports[`Buffer.from non-string is unsupported 1`] = `
+"snippetCode.ts (2,7): Unsupported syntax.
+
+      1 | 
+    > 2 |       Buffer.from([]);
+        |       ^
+      3 |     
+"
+`;

@@ -1,0 +1,54 @@
+import ts from 'typescript';
+import { ScriptBuilder } from '../../sb';
+import { VisitOptions } from '../../types';
+import { Helper } from '../Helper';
+
+export interface ArrForEachHelperOptions {
+  readonly each: (options: VisitOptions) => void;
+  readonly withIndex?: boolean;
+}
+
+// Input: [array]
+// Output: []
+export class ArrForEachHelper extends Helper {
+  private readonly each: (options: VisitOptions) => void;
+  private readonly withIndex: boolean;
+
+  public constructor(options: ArrForEachHelperOptions) {
+    super();
+    this.each = options.each;
+    this.withIndex = options.withIndex || false;
+  }
+
+  public emit(sb: ScriptBuilder, node: ts.Node, options: VisitOptions): void {
+    // [map]
+    sb.emitHelper(node, options, sb.helpers.arrToMap);
+    if (this.withIndex) {
+      // [iterator]
+      sb.emitHelper(node, options, sb.helpers.createMapIterator);
+      // []
+      sb.emitHelper(
+        node,
+        options,
+        sb.helpers.rawIteratorForEach({
+          each: (innerOptions) => {
+            // [val, idx]
+            sb.emitOp(node, 'SWAP');
+            // []
+            this.each(innerOptions);
+          },
+        }),
+      );
+    } else {
+      // [enumerator]
+      sb.emitHelper(node, options, sb.helpers.createMapIterator);
+      sb.emitHelper(
+        node,
+        options,
+        sb.helpers.rawEnumeratorForEach({
+          each: this.each,
+        }),
+      );
+    }
+  }
+}

@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`concatenate import 1`] = `
+"const one = 'one';
+const two = 'two';
+const func = () => 'three';
+const fizz = 'fizz', bang = 'bang';
+type Address = string;
+const foo = 'foo';
+abstract class SmartContract {
+    public get foo(): string {
+        return 'foo';
+    }
+}
+// tslint:disable-next-line no-default-export
+class default11 extends SmartContract {
+}
+// tslint:disable-next-line export-name
+class FooType {
+    public readonly bar: string = 'bar';
+}
+const fooType = 'fooType';
+// tslint:disable-next-line no-let
+let valc1 = 0;
+function value48() {
+    return valc1;
+}
+function default45() {
+    valc1 += 1;
+}
+type MyType = string;
+const default35 = 'baz';
+// tslint:disable-next-line no-let
+let valc2 = 0;
+const x = 3;
+const value52 = () => valc2;
+const incrementValue = () => {
+    valc2 += 1;
+};
+const bar = { value: value52, incrementValue: incrementValue, x: x };
+if (foo !== 'foo') {
+    throw 'Failure';
+}
+if ((foo as Address) !== 'foo') {
+    throw 'Failure';
+}
+if (bar.value() !== 0) {
+    throw 'Failure';
+}
+bar.incrementValue();
+if (bar.value() !== 1) {
+    throw 'Failure';
+}
+if (value48() !== 0) {
+    throw 'Failure';
+}
+default45();
+if (value48() !== 1) {
+    throw 'Failure';
+}
+if (bar.x !== 3) {
+    throw 'Failure';
+}
+if (default35 !== 'baz') {
+    throw 'Failure';
+}
+// tslint:disable-next-line export-name
+export class Qux extends SmartContract {
+    public useFooType(fooType: FooType): string {
+        return fooType.bar;
+    }
+}
+const qux = new Qux();
+if (qux.foo !== 'foo') {
+    throw 'Failure';
+}
+const fooSC = new default11();
+if (fooSC.foo !== 'foo') {
+    throw 'Failure';
+}
+export { fooSC as fooSC };
+export { fooSC as barSC };
+export { bar };
+export { bar as bar2 };
+export { default35 as baz };
+export { default35 as baz2 };
+export { FooType as FooType, fooType as fooType };
+export { Address as Address, foo as foo, SmartContract as SmartContract };
+export { SmartContract as SmartContract2Level, default11 as FooSmartContract2Level, foo as foo2level, Address as Address2Level };
+export { fizz as fizz };
+export const foo5 = { one: one, two: two, func: func };
+export const somethingElse = { one: one, two: two, func: func };
+export { MyType as MyType };
+"
+`;

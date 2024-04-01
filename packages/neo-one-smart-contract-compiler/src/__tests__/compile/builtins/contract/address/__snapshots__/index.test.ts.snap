@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Address cannot be implemented 1`] = `
+"snippetCode.ts (3,13): Class 'MyAddress' incorrectly implements interface 'Address'.
+  Type 'MyAddress' is missing the following properties from type 'Address': [OpaqueTagSymbol0], length, equals, toString, and 3 more.
+
+      1 | 
+      2 |       import { Address } from '@neo-one/smart-contract';
+    > 3 |       class MyAddress implements Address {
+        |             ^
+      4 |       }
+      5 |     
+"
+`;

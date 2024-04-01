@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Object cannot be extended 1`] = `
+"snippetCode.ts (2,30): Type 'ObjectConstructor' is not a constructor function type.
+
+      1 | 
+    > 2 |       class MyObject extends Object {
+        |                              ^
+      3 |       }
+      4 |     
+"
+`;
+
+exports[`Object cannot match shape and pass to function 1`] = `
+"snippetCode.ts (10,9): Argument of type '{ keys: (o: {}) => string[]; }' is not assignable to parameter of type 'ObjectConstructor'.
+  Property '[one0]' is missing in type '{ keys: (o: {}) => string[]; }' but required in type 'ObjectConstructor'.
+
+       8 |       }
+       9 | 
+    > 10 |       x(Obj);
+         |         ^
+      11 |     
+"
+`;
