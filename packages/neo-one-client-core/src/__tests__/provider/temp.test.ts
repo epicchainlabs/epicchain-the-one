@@ -3,7 +3,7 @@ import { Hash160 } from '../../Hash160';
 import { JSONRPCClient, JSONRPCHTTPProvider } from '../../provider';
 
 describe('JSONRPCClient Tests', async () => {
-  const neo = 'http://seed1t.neo.org:20332/';
+  const neo = 'http://testnet1-seed.epic-chain.org:20332/';
   const staging = 'https://staging.neotracker.io/rpc';
   const local = 'http://localhost:8080/rpc';
   const neoClient = new JSONRPCClient(new JSONRPCHTTPProvider(neo));

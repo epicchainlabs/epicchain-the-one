@@ -277,20 +277,7 @@ Note
 
 Deployment has not been thoroughly tested yet for N3. It _should_ work, but there may be bugs, so be aware and feel free to bring up issues and ask questions in our [Discord](https://discord.gg/S86PqDE) server. For more details on deployment specifics and migration files, check out the [Deployment](/docs/deployment) page.
 
-:::
 
-### Get Test coins
-
-You can get test coins automatically from https://neowish.ngd.network/neo3/#/
-
-If you need more than that. You must apply through Neo website. Please follow the instructions here: https://docs.neo.org/docs/en-us/network/testnet.html#applying-for-test-coin-from-neo-website
-
-::: warning
-
-Note
-
-- It costs about 500 GAS to deploy a simple contract. Checkout [System Fees](https://docs.neo.org/docs/en-us/sc/fees.html) for more details.
-- You should then be able to see the assets in your wallet at https://testnet.neotracker.io
 
 :::
 

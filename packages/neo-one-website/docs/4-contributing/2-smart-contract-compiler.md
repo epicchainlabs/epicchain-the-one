@@ -8,7 +8,7 @@ title: Smart Contract Compiler
 ### Basics of the Smart Contract Compiler
 
 The NEO•ONE Smart Contract Compiler is by far the _largest_ NEO•ONE package. The compiler takes in (almost) regular
-TypeScript code and compiles it to [NeoVM](https://docs.neo.org/docs/en-us/basic/technology/neovm.html) bytecode, which can
+TypeScript code and compiles it to [NeoVM](https://docs.epic-chain.org/docs/en-us/basic/technology/neovm.html) bytecode, which can
 then be deployed to the Neo blockchain and run on the NeoVM. NEO•ONE uses the TypeScript compiler API to parse the TypeScript code
 into a tree of "nodes" with information about each node. Our compiler then "visits" each node and begins to output specific
 bytecode for the VM instructions that are needed in order to execute the logic that is specified by the TypeScript code.

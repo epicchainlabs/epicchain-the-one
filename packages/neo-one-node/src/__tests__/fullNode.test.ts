@@ -1,4 +1,4 @@
-import { createTest } from '@neo-one/node-neo-settings';
+import { createTest } from '@epicchain-the-one/node-neo-settings';
 import { FullNode } from '../FullNode';
 
 jest.setTimeout(30000000);
@@ -10,21 +10,20 @@ describe('full node test', () => {
     const nodeOptions = {
       externalPort: 8080,
       rpcURLs: [
-        'http://seed1t.neo.org:20332',
-        'http://seed2t.neo.org:20332',
-        'http://seed3t.neo.org:20332',
-        'http://seed4t.neo.org:20332',
-        'http://seed5t.neo.org:20332',
+        'http://testnet1-seed.epic-chain.org::20332',
+        'http://testnet3-seed.epic-chain.org:20332',
+        'http://testnet4-seed.epic-chain.org::20332',
+        'http://testnet4-seed.epic-chain.org::20332',
       ],
     };
 
     const networkOptions = {
       seeds: [
-        'http://seed1t.neo.org:20333',
-        'http://seed2t.neo.org:20333',
-        'http://seed3t.neo.org:20333',
-        'http://seed4t.neo.org:20333',
-        'http://seed5t.neo.org:20333',
+        'http://testnet1-seed.epic-chain.org:20333',
+        'http://testnet2-seed.epic-chain.org:20333',
+        'http://testnet3-seed.epic-chain.org:20333',
+        'http://testnet4-seed.epic-chain.org::20333',
+        'http://testnet4-seed.epic-chain.org::20333',
       ],
     };
 

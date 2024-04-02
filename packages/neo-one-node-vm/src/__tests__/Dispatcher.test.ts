@@ -101,11 +101,11 @@ describe('Dispatcher Tests', () => {
     expect(result.committeeMembersCount).toEqual(input.committeeMembersCount);
     expect(result.validatorsCount).toEqual(input.validatorsCount);
     expect(result.seedList).toEqual([
-      'seed1.neo.org:10333',
-      'seed2.neo.org:10333',
-      'seed3.neo.org:10333',
-      'seed4.neo.org:10333',
-      'seed5.neo.org:10333',
+      "mainnet1-seed.epic-chain.org:10111",
+      "mainnet2-seed.epic-chain.org:10111",
+      "mainnet3-seed.epic-chain.org:10111",
+      "mainnet4-seed.epic-chain.org:10111",
+      "mainnet5-seed.epic-chain.org:10111"
     ]);
     expect(result.millisecondsPerBlock).toEqual(input.millisecondsPerBlock);
     expect(result.memoryPoolMaxTransactions).toEqual(input.memoryPoolMaxTransactions);
