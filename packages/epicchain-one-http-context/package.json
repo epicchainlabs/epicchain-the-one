@@ -1,5 +1,5 @@
 {
-  "name": "@neo-one/http-context",
+  "name": "@epicchain-one/http-context",
   "version": "3.11.2",
   "description": "NEO•ONE http context utilities.",
   "main": "./dist/cjs/index",

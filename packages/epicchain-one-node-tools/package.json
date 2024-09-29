@@ -1,5 +1,5 @@
 {
-  "name": "@neo-one/node-tools",
+  "name": "@epicchain-one/node-tools",
   "version": "2.3.1",
   "description": "tools for the node",
   "bin": {

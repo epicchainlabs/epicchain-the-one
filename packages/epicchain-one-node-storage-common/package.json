@@ -1,5 +1,5 @@
 {
-  "name": "@neo-one/node-storage-common",
+  "name": "@epicchain-one/node-storage-common",
   "version": "3.11.2",
   "description": "NEO•ONE node storage common.",
   "main": "./dist/cjs/index",

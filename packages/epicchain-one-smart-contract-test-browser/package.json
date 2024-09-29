@@ -1,5 +1,5 @@
 {
-  "name": "@neo-one/smart-contract-test-browser",
+  "name": "@epicchain-one/smart-contract-test-browser",
   "version": "2.3.1",
   "description": "NEO•ONE TypeScript smart contract test harness for browsers.",
   "main": "./src/index",

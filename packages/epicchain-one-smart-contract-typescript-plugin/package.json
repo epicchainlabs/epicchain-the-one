@@ -1,5 +1,5 @@
 {
-  "name": "@neo-one/smart-contract-typescript-plugin",
+  "name": "@epicchain-one/smart-contract-typescript-plugin",
   "version": "3.11.2",
   "description": "NEO•ONE TypeScript typescript plugin.",
   "main": "./dist/cjs/index",

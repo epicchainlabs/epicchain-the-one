@@ -1,5 +1,5 @@
 {
-  "name": "@neo-one/node-consensus",
+  "name": "@epicchain-one/node-consensus",
   "version": "3.11.2",
   "description": "NEO•ONE NEO consensus protocol.",
   "main": "./dist/cjs/index",

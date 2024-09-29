@@ -1,5 +1,5 @@
 {
-  "name": "@neo-one/node-core",
+  "name": "@epicchain-one/node-core",
   "version": "3.11.2",
   "description": "NEO•ONE core types for node packages",
   "main": "./dist/cjs/index",

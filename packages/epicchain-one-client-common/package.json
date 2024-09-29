@@ -1,5 +1,5 @@
 {
-  "name": "@neo-one/client-common",
+  "name": "@epicchain-one/client-common",
   "version": "3.11.2",
   "description": "NEO•ONE client common code.",
   "main": "./dist/cjs/index",

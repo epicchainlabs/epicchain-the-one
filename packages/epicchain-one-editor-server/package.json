@@ -1,5 +1,5 @@
 {
-  "name": "@neo-one/editor-server",
+  "name": "@epicchain-one/editor-server",
   "version": "2.3.0",
   "description": "NEO•ONE editor server.",
   "main": "./src/index",

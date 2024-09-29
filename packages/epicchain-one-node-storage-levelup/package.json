@@ -1,5 +1,5 @@
 {
-  "name": "@neo-one/node-storage-levelup",
+  "name": "@epicchain-one/node-storage-levelup",
   "version": "3.11.2",
   "description": "NEO•ONE levelup node storage.",
   "main": "./dist/cjs/index",

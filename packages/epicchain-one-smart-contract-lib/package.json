@@ -1,5 +1,5 @@
 {
-  "name": "@neo-one/smart-contract-lib",
+  "name": "@epicchain-one/smart-contract-lib",
   "version": "3.11.2",
   "description": "NEO•ONE TypeScript common smart contracts.",
   "main": "./src/index.ts",

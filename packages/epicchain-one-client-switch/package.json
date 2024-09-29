@@ -1,5 +1,5 @@
 {
-  "name": "@neo-one/client-switch",
+  "name": "@epicchain-one/client-switch",
   "version": "3.11.2",
   "description": "NEO•ONE client library for browser/node differences.",
   "main": "./dist/cjs/index",

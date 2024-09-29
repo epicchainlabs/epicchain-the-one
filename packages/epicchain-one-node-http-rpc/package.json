@@ -1,5 +1,5 @@
 {
-  "name": "@neo-one/node-http-rpc",
+  "name": "@epicchain-one/node-http-rpc",
   "version": "3.11.2",
   "description": "NEO•ONE RPC server.",
   "main": "./dist/cjs/index",

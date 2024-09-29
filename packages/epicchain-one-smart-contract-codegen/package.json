@@ -1,5 +1,5 @@
 {
-  "name": "@neo-one/smart-contract-codegen",
+  "name": "@epicchain-one/smart-contract-codegen",
   "version": "3.11.2",
   "description": "NEO•ONE TypeScript smart contract codegen.",
   "main": "./dist/cjs/index",

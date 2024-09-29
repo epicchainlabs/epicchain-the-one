@@ -1,5 +1,5 @@
 {
-  "name": "@neo-one/node-vm",
+  "name": "@epicchain-one/node-vm",
   "version": "3.11.2",
   "description": "NEO•ONE C# Wrapper for Neo3 VM",
   "main": "./dist/cjs/index",

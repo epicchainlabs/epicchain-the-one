@@ -1,5 +1,5 @@
 {
-  "name": "@neo-one/smart-contract-compiler",
+  "name": "@epicchain-one/smart-contract-compiler",
   "version": "3.11.2",
   "description": "NEO•ONE TypeScript smart contract compiler.",
   "main": "./dist/cjs/index",

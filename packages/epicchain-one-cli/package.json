@@ -1,5 +1,5 @@
 {
-  "name": "@neo-one/cli",
+  "name": "@epicchain-one/cli",
   "version": "3.11.2",
   "description": "NEO•ONE CLI for developing NEO dapps.",
   "main": "./dist/cjs/index",

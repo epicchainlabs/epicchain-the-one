@@ -1,5 +1,5 @@
 {
-  "name": "@neo-one/node-offline",
+  "name": "@epicchain-one/node-offline",
   "version": "3.11.2",
   "description": "NEO•ONE utility for loading serialized blocks (chain.acc) into a node.",
   "main": "./dist/cjs/index",

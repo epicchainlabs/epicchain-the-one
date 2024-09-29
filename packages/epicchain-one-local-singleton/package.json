@@ -1,5 +1,5 @@
 {
-  "name": "@neo-one/local-singleton",
+  "name": "@epicchain-one/local-singleton",
   "version": "2.3.1",
   "description": "NEO•ONE local singleton stubs.",
   "main": "./src/index",

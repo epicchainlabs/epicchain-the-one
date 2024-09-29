@@ -1,5 +1,5 @@
 {
-  "name": "@neo-one/build-tests",
+  "name": "@epicchain-one/build-tests",
   "version": "1.0.0",
   "description": "Tool package for running unit/e2e tests",
   "scripts": {

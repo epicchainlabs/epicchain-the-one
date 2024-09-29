@@ -1,5 +1,5 @@
 {
-  "name": "@neo-one/local-browser",
+  "name": "@epicchain-one/local-browser",
   "version": "2.3.1",
   "description": "NEO•ONE local browser implementation.",
   "main": "./src/index",

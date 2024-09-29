@@ -1,5 +1,5 @@
 {
-  "name": "@neo-one/cli-common",
+  "name": "@epicchain-one/cli-common",
   "version": "3.11.2",
   "description": "NEO•ONE code common to the cli and browser.",
   "main": "./dist/cjs/index",

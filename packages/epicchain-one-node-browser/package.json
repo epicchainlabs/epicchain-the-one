@@ -1,5 +1,5 @@
 {
-  "name": "@neo-one/node-browser",
+  "name": "@epicchain-one/node-browser",
   "version": "2.3.0",
   "description": "NEO•ONE Node for browsers.",
   "main": "./src/index",

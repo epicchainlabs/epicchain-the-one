@@ -1,5 +1,5 @@
 {
-  "name": "@neo-one/node-neo-settings",
+  "name": "@epicchain-one/node-neo-settings",
   "version": "3.11.2",
   "description": "NEO•ONE standard MainNet and TestNet blockchain settings.",
   "main": "./dist/cjs/index",

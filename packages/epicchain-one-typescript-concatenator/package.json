@@ -1,5 +1,5 @@
 {
-  "name": "@neo-one/typescript-concatenator",
+  "name": "@epicchain-one/typescript-concatenator",
   "version": "2.7.0",
   "description": "NEO•ONE TypeScript Concatenator",
   "main": "./dist/cjs/index",

@@ -1,5 +1,5 @@
 {
-  "name": "@neo-one/client-full",
+  "name": "@epicchain-one/client-full",
   "version": "3.11.2",
   "description": "NEO•ONE client extended API.",
   "main": "./dist/cjs/index",

@@ -1,5 +1,5 @@
 {
-  "name": "@neo-one/react",
+  "name": "@epicchain-one/react",
   "version": "3.11.2",
   "description": "NEO•ONE React utilities.",
   "main": "./dist/cjs/index",

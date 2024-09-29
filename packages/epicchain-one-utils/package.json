@@ -1,5 +1,5 @@
 {
-  "name": "@neo-one/utils",
+  "name": "@epicchain-one/utils",
   "version": "3.2.1",
   "description": "NEO•ONE shared utils.",
   "main": "./dist/cjs/index",

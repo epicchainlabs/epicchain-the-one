@@ -1,5 +1,5 @@
 {
-  "name": "@neo-one/node-rpc-handler",
+  "name": "@epicchain-one/node-rpc-handler",
   "version": "3.11.2",
   "description": "NEO•ONE RPC handler.",
   "main": "./dist/cjs/index",

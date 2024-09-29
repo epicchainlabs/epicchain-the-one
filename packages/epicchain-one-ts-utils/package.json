@@ -1,5 +1,5 @@
 {
-  "name": "@neo-one/ts-utils",
+  "name": "@epicchain-one/ts-utils",
   "version": "2.7.0",
   "description": "NEO•ONE TypeScript utils.",
   "main": "./dist/cjs/index",

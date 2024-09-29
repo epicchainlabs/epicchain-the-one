@@ -1,5 +1,5 @@
 {
-  "name": "@neo-one/build-tools",
+  "name": "@epicchain-one/build-tools",
   "version": "1.0.0",
   "description": "NEO•ONE build tools.",
   "main": "./dist/index",

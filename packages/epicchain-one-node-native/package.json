@@ -1,5 +1,5 @@
 {
-  "name": "@neo-one/node-native",
+  "name": "@epicchain-one/node-native",
   "version": "3.11.2",
   "description": "NEO•ONE Node Native Contract Implementations",
   "main": "./dist/cjs/index",

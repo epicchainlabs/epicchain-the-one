@@ -1,5 +1,5 @@
 {
-  "name": "@neo-one/logger-config",
+  "name": "@epicchain-one/logger-config",
   "version": "2.6.1",
   "description": "NEO•ONE logging utility config",
   "main": "./dist/cjs/index",

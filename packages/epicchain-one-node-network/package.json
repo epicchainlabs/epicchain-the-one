@@ -1,5 +1,5 @@
 {
-  "name": "@neo-one/node-network",
+  "name": "@epicchain-one/node-network",
   "version": "3.11.2",
   "description": "NEO•ONE NEO network protocol.",
   "main": "./dist/cjs/index",

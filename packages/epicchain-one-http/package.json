@@ -1,5 +1,5 @@
 {
-  "name": "@neo-one/http",
+  "name": "@epicchain-one/http",
   "version": "3.11.2",
   "description": "NEO•ONE http utilities.",
   "main": "./dist/cjs/index",

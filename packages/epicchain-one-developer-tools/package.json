@@ -1,5 +1,5 @@
 {
-  "name": "@neo-one/developer-tools",
+  "name": "@epicchain-one/developer-tools",
   "version": "3.11.2",
   "description": "NEO•ONE developer tools.",
   "main": "./dist/cjs/index",

@@ -1,5 +1,5 @@
 {
-  "name": "@neo-one/smart-contract-test",
+  "name": "@epicchain-one/smart-contract-test",
   "version": "3.11.2",
   "description": "NEO•ONE TypeScript smart contract test harness.",
   "main": "./dist/cjs/index",
