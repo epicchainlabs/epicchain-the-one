@@ -1,5 +1,5 @@
 {
-  "name": "@neo-one/worker",
+  "name": "@epicchain-one/worker",
   "version": "2.3.0",
   "description": "NEO•ONE web workers.",
   "main": "./src/index",

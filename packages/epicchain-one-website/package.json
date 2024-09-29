@@ -1,5 +1,5 @@
 {
-  "name": "@neo-one/website",
+  "name": "@epicchain-one/website",
   "version": "2.4.0",
   "description": "NEO•ONE website.",
   "main": "./src/index",
