@@ -24,7 +24,7 @@ We believe in fostering an open and collaborative environment. Here are some key
 
 ## Documentation
 
-For in-depth information about EpicChain, including its features, architecture, and usage, please visit our comprehensive [Documentation](https://docs.epic-chain.org). Our documentation provides:
+For in-depth information about EpicChain, including its features, architecture, and usage, please visit our comprehensive [Documentation](https://epic-chain.org). Our documentation provides:
 
 - **Getting Started Guides**: Step-by-step instructions to help you set up and start using EpicChain.
 - **Technical Specifications**: Detailed descriptions of the architecture, components, and protocols used in EpicChain.
