@@ -2,13 +2,13 @@
   "name": "@neo-one/node-network",
   "entries": [
     {
-      "version": "3.11.2",
-      "tag": "@neo-one/node-network_v3.11.2",
+      "version": "1.0.0",
+      "tag": "@neo-one/node-network_v1.0.0",
       "date": "Tue, 07 Dec 2021 02:24:31 GMT",
       "comments": {
         "dependency": [
           {
-            "comment": "Dependency @neo-one/client-switch version bump from ^3.8.7 to ^3.11.2."
+            "comment": "Dependency @neo-one/client-switch version bump from ^3.8.7 to ^1.0.0."
           }
         ]
       }

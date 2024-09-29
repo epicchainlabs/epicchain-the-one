@@ -2,7 +2,7 @@
 
 This log was last generated on Tue, 07 Dec 2021 02:24:31 GMT and should not be manually modified.
 
-## 3.11.2
+## 1.0.0
 Tue, 07 Dec 2021 02:24:31 GMT
 
 *Version update only*

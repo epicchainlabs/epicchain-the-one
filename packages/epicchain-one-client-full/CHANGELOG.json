@@ -2,8 +2,8 @@
   "name": "@neo-one/client-full",
   "entries": [
     {
-      "version": "3.11.2",
-      "tag": "@neo-one/client-full_v3.11.2",
+      "version": "1.0.0",
+      "tag": "@neo-one/client-full_v1.0.0",
       "date": "Tue, 07 Dec 2021 02:24:31 GMT",
       "comments": {}
     },

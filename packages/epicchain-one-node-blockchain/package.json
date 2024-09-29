@@ -1,6 +1,6 @@
 {
   "name": "@neo-one/node-blockchain",
-  "version": "3.11.2",
+  "version": "1.0.0",
   "description": "NEO•ONE Blockchain implementation",
   "main": "./dist/cjs/index",
   "scripts": {
@@ -12,10 +12,10 @@
   },
   "sideEffects": false,
   "dependencies": {
-    "@neo-one/client-common": "^3.11.2",
-    "@neo-one/client-switch": "^3.11.2",
-    "@neo-one/node-core": "^3.11.2",
-    "@neo-one/node-native": "^3.11.2",
+    "@neo-one/client-common": "^1.0.0",
+    "@neo-one/client-switch": "^1.0.0",
+    "@neo-one/node-core": "^1.0.0",
+    "@neo-one/node-native": "^1.0.0",
     "@neo-one/logger": "^2.7.0",
     "@neo-one/utils": "^3.2.1",
     "bn.js": "^5.0.0",
@@ -27,9 +27,9 @@
   "devDependencies": {
     "@neo-one/client-core": "^3.11.1",
     "@neo-one/build-tools": "^1.0.0",
-    "@neo-one/node-neo-settings": "^3.11.2",
-    "@neo-one/node-storage-levelup": "^3.11.2",
-    "@neo-one/node-vm": "^3.11.2",
+    "@neo-one/node-neo-settings": "^1.0.0",
+    "@neo-one/node-storage-levelup": "^1.0.0",
+    "@neo-one/node-vm": "^1.0.0",
     "@types/jest": "^24.0.18",
     "@types/js-priority-queue": "^0.0.5",
     "@types/levelup": "^3.1.1",

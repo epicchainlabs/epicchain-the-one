@@ -2,13 +2,13 @@
   "name": "@neo-one/client-switch",
   "entries": [
     {
-      "version": "3.11.2",
-      "tag": "@neo-one/client-switch_v3.11.2",
+      "version": "1.0.0",
+      "tag": "@neo-one/client-switch_v1.0.0",
       "date": "Tue, 07 Dec 2021 02:24:31 GMT",
       "comments": {
         "dependency": [
           {
-            "comment": "Dependency @neo-one/node-core version bump from ^3.9.1 to ^3.11.2."
+            "comment": "Dependency @neo-one/node-core version bump from ^3.9.1 to ^1.0.0."
           }
         ]
       }

@@ -1,6 +1,6 @@
 {
   "name": "@epicchain-one/client-full",
-  "version": "3.11.2",
+  "version": "1.0.0",
   "description": "NEO•ONE client extended API.",
   "main": "./dist/cjs/index",
   "module": "./dist/esm/index",
@@ -13,8 +13,8 @@
   },
   "sideEffects": false,
   "dependencies": {
-    "@neo-one/client": "^3.11.2",
-    "@neo-one/client-full-core": "^3.11.2"
+    "@neo-one/client": "^1.0.0",
+    "@neo-one/client-full-core": "^1.0.0"
   },
   "devDependencies": {
     "@neo-one/build-tools": "^1.0.0",

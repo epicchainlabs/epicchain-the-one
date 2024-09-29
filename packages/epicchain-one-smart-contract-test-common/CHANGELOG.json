@@ -2,8 +2,8 @@
   "name": "@neo-one/smart-contract-test-common",
   "entries": [
     {
-      "version": "3.11.2",
-      "tag": "@neo-one/smart-contract-test-common_v3.11.2",
+      "version": "1.0.0",
+      "tag": "@neo-one/smart-contract-test-common_v1.0.0",
       "date": "Tue, 07 Dec 2021 02:24:31 GMT",
       "comments": {}
     },

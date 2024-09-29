@@ -1,6 +1,6 @@
 {
   "name": "@epicchain-one/client-full-core",
-  "version": "3.11.2",
+  "version": "1.0.0",
   "description": "NEO•ONE client-full core types implementation.",
   "main": "./dist/cjs/index",
   "module": "./dist/esm/index",
@@ -13,10 +13,10 @@
   },
   "sideEffects": false,
   "dependencies": {
-    "@neo-one/client-common": "^3.11.2",
-    "@neo-one/client-core": "^3.11.2",
-    "@neo-one/client-full-common": "^3.11.2",
-    "@neo-one/client-switch": "^3.11.2",
+    "@neo-one/client-common": "^1.0.0",
+    "@neo-one/client-core": "^1.0.0",
+    "@neo-one/client-full-common": "^1.0.0",
+    "@neo-one/client-switch": "^1.0.0",
     "@neo-one/utils": "^3.2.1",
     "bignumber.js": "^9.0.0",
     "lodash": "^4.17.15",
@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@neo-one/build-tools": "^1.0.0",
-    "@neo-one/node-core": "^3.11.2",
+    "@neo-one/node-core": "^1.0.0",
     "@reactivex/ix-es2015-cjs": "^2.5.3",
     "@types/bn.js": "^4.11.5",
     "@types/jest": "^24.0.18",
